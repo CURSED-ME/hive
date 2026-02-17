@@ -29,6 +29,7 @@ from .csv_tool import register_tools as register_csv
 
 # Security scanning tools
 from .dns_security_scanner import register_tools as register_dns_security_scanner
+from .discord_tool import register_tools as register_discord
 from .email_tool import register_tools as register_email
 from .example_tool import register_tools as register_example
 from .excel_tool import register_tools as register_excel
@@ -134,6 +135,8 @@ def register_all_tools(
     register_tech_stack_detector(mcp)
     register_subdomain_enumerator(mcp)
     register_risk_scorer(mcp)
+
+    register_discord(mcp, credentials=credentials)
 
     return [
         "example_tool",
@@ -317,6 +320,8 @@ def register_all_tools(
         "tech_stack_detect",
         "subdomain_enumerate",
         "risk_score",
+        "discord_send_message",
+        "discord_read_history",
     ]
 
 
